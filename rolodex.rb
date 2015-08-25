@@ -1,7 +1,8 @@
 require_relative 'contact.rb'
 
 class Rolodex
-	
+	attr_reader :contacts
+
 	def initialize
 		@contacts = []
 		@id = 1000

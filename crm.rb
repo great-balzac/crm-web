@@ -20,3 +20,11 @@ get '/contacts/new' do
 	erb :new_contact
 end
 
+# Server responds to the POST method and creates a resource
+# with the data submitted from new_contact.erb
+post '/contacts' do
+	# puts params
+	new_contact = Contact.new(params[:fname], params[:lname], params[:email], params[:notes])
+	$rolodex.add_contact(new_contact)
+	redirect to('/contacts')	# Redirects to display contacts page
+end
