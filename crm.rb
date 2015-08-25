@@ -1,4 +1,5 @@
 require 'sinatra'
+require 'contact'
 
 get '/' do		# Root directory
 	@crm_app_name = "My CRM"	# Instance variable containing application name that can be read by index.erb
@@ -15,3 +16,4 @@ end
 get 'contacts/new' do
 	# insert page ref here
 end
+
