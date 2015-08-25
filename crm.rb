@@ -1,5 +1,6 @@
 require 'sinatra'
 require_relative 'contact'
+require_relative 'rolodex'
 
 get '/' do		# Root directory
 	@crm_app_name = "My CRM"	# Instance variable containing application name that can be read by index.erb
