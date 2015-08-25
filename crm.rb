@@ -10,3 +10,8 @@ end
 get '/contacts' do
 	erb :contacts
 end
+
+# Add a new contact
+get 'contacts/new' do
+	# insert page ref here
+end
