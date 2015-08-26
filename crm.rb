@@ -59,6 +59,16 @@ put "/contacts/:id" do
 	end
 end # put "/contacts/:id"
 
+delete "/contacts/:id" do
+	@contact = $rolodex.find_contact(params[:id].to_i)
+	if @contact
+		$rolodex.remove_contact(@contact)
+		redirect to("/contacts")  # After deletion, returns to contacts main page
+	else
+		raise Sinatra::NotFound
+	end
+end # delete "/contacts/:id"
+
 # Server responds to the POST method and creates a resource
 # with the data submitted from new_contact.erb
 post '/contacts' do
