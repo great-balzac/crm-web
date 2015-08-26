@@ -2,10 +2,12 @@
 
 <ul>
 <% $rolodex.contacts.each do |contact| %>
+	<div class="contact-box col-1-3">
 	<li>ID#: <%= contact.id %></li>
 	<li>Name: <%= contact.fname %> <%= contact.lname %></li>
 	<li>Email: <%= contact.email %></li>
 	<li>Notes:</li>
 	<p><%= contact.notes %></p>
+	</div>
 <% end %>
 </ul>

@@ -1,9 +1,35 @@
 <!DOCTYPE html>
 <html>
 	<head>
+	    <meta charset="utf-8">
+		<link async rel="stylesheet" href="/main.css">
+		<link async href="https://fonts.googleapis.com/css?family=Ubuntu:100,300,400,500,700" rel="stylesheet" type="text/css">
 	</head>
 
+  <header class="header cf">
+	<h1 class="title">Contact Manager</h1>
+	<h4 class="navtools">
+		<a href="/">Main</a>
+		<a href="/contacts">View all contacts</a>
+		<a href="/contacts/new">Create new contact</a>
+	</h4>
+	
+  </header>
+
 	<body>
+		<div class="container row grid">
 		<%= yield %>
+		</div>
 	</body>
+
+	<footer class="footer cf">
+	<h3 class="credits">Created by Daniel Pereira - 2015 Bitmaker Labs</h3>
+	<h4 class="navtools">
+		<a href="/">Main</a>
+		<a href="/contacts">View all contacts</a>
+		<a href="/contacts/new">Create new contact</a>
+	</h4>
+
+  	</footer>
+
 </html>
