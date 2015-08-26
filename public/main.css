@@ -179,10 +179,18 @@ strong {
 	text-decoration: underline;
 }
 
+
 .contact-box {
 	margin: 5px;
 	box-shadow: 6px 6px 4px #ECECEC;
 	border-radius: 7px 7px;
+	float: left;
+}
+
+.contact-box th {
+	text-align: left;
+	padding-right: 2em;
+
 }
 
 /*

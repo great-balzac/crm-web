@@ -1,13 +1,17 @@
 <h1 class="elementshadow">All Contacts</h1>
 
-<ul class="contact-display">
+<ul class="contact-display cf">
 <% $rolodex.contacts.each do |contact| %>
-	<div class="contact-box col-1-3">
-	<li><strong>ID#: </strong><%= contact.id %></li>
-	<li><strong>Name: </strong><%= contact.fname %> <%= contact.lname %></li>
-	<li><strong>Email: </strong><%= contact.email %></li>
-	<li><strong>Notes:</strong></li>
-	<p><%= contact.notes %></p>
+	<div class="contact-box col-1-3 cf">
+	<table>
+	<tr><th><strong>ID#: </strong></th><th><%= contact.id %></th></tr>
+	<tr><th><strong>Name: </strong></th><th><%= contact.fname %> <%= contact.lname %></th></tr>
+	<tr><th><strong>Email: </strong></th><th><%= contact.email %></th></tr>
+	<tr>
+		<th><strong>Notes:</strong></th>
+		<th><%= contact.notes %></th>
+	</tr>	
+	</table>
 	</div>
 <% end %>
 </ul>
