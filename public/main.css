@@ -224,7 +224,7 @@ Header
 header {
 	color: #1f1f20;
 	background-color: #606d80;
-	border-bottom: 2px solid #567ebb;
+	border-bottom: 1px solid #567ebb;
 	background: -webkit-linear-gradient(to right bottom, #606d80, #dce0e6);
 	background:    -moz-linear-gradient(to right bottom, #606d80, #dce0e6);
 	background:         linear-gradient(to right bottom, #606d80, #dce0e6);
@@ -234,6 +234,7 @@ header {
 .header .title {
 	margin-bottom: auto;
 	text-shadow: 2px 2px #606d80;
+	padding-left: 22px;
 	float: left;
 	vertical-align: middle;
 }
@@ -244,21 +245,43 @@ NAVIGATION BAR
 =======================
 */
 .navtools {
-	line-height: 20px;
+	max-width: 35em;
+	line-height: .5em;
 	font-weight: 100;
 	margin: auto;
 	padding: 11px;
-	text-align: right;
+	text-align: center;
+	border-radius: 0px 0px 7px 7px;
+
+	color: #1f1f20;
+	background-color: #606d80;
+	border-top: none;
+	border-right: 1px solid #567ebb;
+	border-left: 1px solid #567ebb;
+	border-bottom: 1px solid #567ebb;
+
+	box-shadow: 0px 3px 3px #567EBB;
+	background: -webkit-linear-gradient(#dce0e6, #606d80);
+	background:    -moz-linear-gradient(#dce0e6, #606d80);
+	background:         linear-gradient(#dce0e6, #606d80);
 }
 
 .navtools a {
 	color: #1f1f20;
+	text-shadow: 2px 2px #567EBB;
 	text-decoration: none;
+	border-color: #567EBB;
 }
 .navtools a:hover {
-	background-color: #dce0e6;
+	background: -webkit-linear-gradient(#dce0e6, #2B4C7E);
+	background:    -moz-linear-gradient(#dce0e6, #2B4C7E);
+	background:         linear-gradient(#dce0e6, #2B4C7E);
+	background-color: #567EBB;
 }
 
+.back-to-top {
+
+}
 
 /*
 =======================
@@ -267,12 +290,13 @@ Footer
 */
 .credits {
 	float: left;
+	padding-left: 22px;
 }
 
 .footer {
 	color: #1f1f20;
 	background-color: #606d80;
-	border-bottom: 2px solid #567ebb;
+	border-top: 1px solid #567ebb;
 	background: -webkit-linear-gradient(to right bottom, #606d80, #dce0e6);
 	background:    -moz-linear-gradient(to right bottom, #606d80, #dce0e6);
 	background:         linear-gradient(to right bottom, #606d80, #dce0e6);
@@ -311,6 +335,11 @@ Styles
 
 .elementshadow {
 	box-shadow: 0 2px 3px #ECECEC;
+}
+
+.textshadow {
+	color: #1F1F20;
+	text-shadow: 2px 2px 1px #606D80;
 }
 
 .listshadow {
