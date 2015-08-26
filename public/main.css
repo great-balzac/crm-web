@@ -117,10 +117,6 @@ Rows
 	padding: 44px 0 22px 0;
 }
 
-.new-contact-headings {
-	line-height: 0px;
-}
-
 
 .form {
 	padding: .5em;
@@ -138,6 +134,9 @@ Typography
 body {
 	background-color: #FFFFFF;
 	font-family: "Ubuntu", Helvetica, Arial, sans-serif;
+	background: -webkit-linear-gradient( #fff, #ececec);
+	background:    -moz-linear-gradient( #fff, #ececec);
+	background:         linear-gradient( #fff, #ececec);
 }
 
 h1 {
@@ -197,6 +196,7 @@ body p {
 
 
 body a {
+	color: #2B4C7E;
 	font-size: 18px;
 	text-decoration: none;
 }
@@ -271,6 +271,10 @@ Footer
 	box-shadow: 0 -3px -3px #ECECEC;
 }
 
+h3 a {
+	text-decoration: none;
+	font-size: 14px;
+}
 
 /*
 =======================
@@ -307,4 +311,13 @@ Styles
 
 .contact-display li {
 	font-size: 18px;
+}
+
+.new-contact-table {
+	margin-top: 22px;
+}
+
+.new-contact-table tr th {
+	text-align: right;
+
 }

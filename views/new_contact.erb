@@ -1,11 +1,28 @@
-<h1>Create new Contact</h1>
-<form action="/contacts" method="post" class="row cf">
-	<div class="col-1-3 cf new-contact-headings">
-		<input type="text" name="fname">First name<br>
-		<input type="text" name="lname">Last name<br>
-		<input type="text" name="email">Email<br>
-		<input type="text" name="notes">Notes<br>
-		<input type="submit" name="Submit">
-	</div>
+<h1 class="elementshadow">Create new Contact</h1>
+	<div class="col-1-3 cf">
+		<table class="new-contact-table">
+		<form action="/contacts" method="post" class="cf">
 
-</form>
+		<tr>
+			<th>First name</th>
+			<th><input type="text" name="fname"></th>
+		</tr>
+		<tr>
+			<th>Last name</th>
+			<th><input type="text" name="lname"></th>
+		</tr>
+		<tr>
+			<th>Email</th>
+			<th><input type="text" name="email"></th>
+		</tr>
+		<tr>
+			<th>Notes</th>
+			<th><input type="text" name="notes"></th>
+		</tr>
+		<tr>
+			<th></th>
+			<th><input type="submit" name="Submit"></th>
+		</tr>
+		</form>
+		</table>
+	</div>
