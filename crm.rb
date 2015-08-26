@@ -6,6 +6,8 @@ $rolodex = Rolodex.new # Set a global variable to allow acces from each action i
 
 # temp fake data
 $rolodex.add_contact(Contact.new("Johnny", "Bravo", "johnny@bitmakerlabs.com", "Rockstar"))
+$rolodex.add_contact(Contact.new("Cornholio", "Great", "bungmuch@bitmakerlabs.com", "From Lake Titticaca"))
+$rolodex.add_contact(Contact.new("Rodney", "Johnson", "DG@bitmakerlabs.com", "Shower cap tester"))
 
 # ===== ROUTES =====
 
@@ -25,9 +27,13 @@ get '/contacts/new' do
 	erb :new_contact
 end
 
-get "/contacts/1000" do
-	@contact = $rolodex.find_contact(1000)
-	erb :show_contact
+get "/contacts/:id" do
+	@contact = $rolodex.find_contact(params[:id].to_i)
+	if @contact
+		erb :show_contact
+	else
+		raise Sinatra::NotFound		# Sinatra 404 page
+	end # if @contact
 end
 
 # Server responds to the POST method and creates a resource

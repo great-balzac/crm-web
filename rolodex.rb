@@ -17,7 +17,7 @@ class Rolodex
 
 	def find_contact(contact_id)
 		# .find is a method that belongs to enumerable module
-		@contacts.find {|contact| contact.id == contact.id}
+		@contacts.find {|contact| contact.id == contact_id}
 	end #find(contact_id)
 
 end # class Rolodex
