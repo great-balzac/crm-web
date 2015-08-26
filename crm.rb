@@ -36,6 +36,15 @@ get "/contacts/:id" do
 	end # if @contact
 end
 
+get "/contacts/:id/edit" do
+	@contact = $rolodex.find(params[:id].to_i)
+	if @contact
+		erb :edit_contact
+	else
+		raise Sinatra::NotFound
+	end
+end
+
 # Server responds to the POST method and creates a resource
 # with the data submitted from new_contact.erb
 post '/contacts' do
