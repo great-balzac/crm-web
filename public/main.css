@@ -179,16 +179,30 @@ strong {
 	text-decoration: underline;
 }
 
+
 .contact-box {
 	margin: 5px;
 	box-shadow: 6px 6px 4px #ECECEC;
 	border-radius: 7px 7px;
+	min-width: 35em;
 	float: left;
 }
 
 .contact-box th {
 	text-align: left;
 	padding-right: 2em;
+}
+
+.word-wrap tr th {
+	white-space: -moz-pre-wrap !important;  /* Mozilla, since 1999 */
+	white-space: -pre-wrap;      /* Opera 4-6 */
+	white-space: -o-pre-wrap;    /* Opera 7 */
+	white-space: pre-wrap;       /* css-3 */
+	word-wrap: break-word;       /* Internet Explorer 5.5+ */
+	white-space: -webkit-pre-wrap; /* Newer versions of Chrome/Safari*/
+	word-wrap: break-word;
+	white-space: normal;
+	max-width: 25em;
 }
 
 /*
@@ -350,5 +364,14 @@ Styles
 
 .new-contact-table tr th {
 	text-align: right;
+	vertical-align: top;
+}
 
+.new-contact-table input {
+	width: 100%;
+}
+
+.new-contact-table textarea {
+	width: 100%;
+	height: 4em;
 }

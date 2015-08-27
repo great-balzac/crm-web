@@ -2,7 +2,7 @@
 <h1 class="textshadow">All Contacts</h1>
 
 <% $rolodex.contacts.each do |contact| %>
-	<div class="col-1-3 contact-box cf">
+	<div class="col-1-3 cf word-wrap contact-box">
 	<table>
 	<tr><th><strong>ID#: </strong></th><th><%= contact.id %></th></tr>
 	<tr><th><strong>Name: </strong></th><th><%= contact.fname %> <%= contact.lname %></th></tr>
