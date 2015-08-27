@@ -1,6 +1,9 @@
 require 'sinatra'
+require 'data_mapper' # Initialize connection to database
 require_relative 'contact'
 require_relative 'rolodex'
+
+DataMapper.setup(:default, "sqlite3:database.sqlite3") # Initialize connection to databse
 
 $rolodex = Rolodex.new # Set a global variable to allow acces from each action in Sinatra
 
