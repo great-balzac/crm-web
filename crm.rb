@@ -1,9 +1,24 @@
 require 'sinatra'
 require 'data_mapper' # Initialize connection to database
-require_relative 'contact'
+# require_relative 'contact' # No longer needed because it exists inside crm.rb
 require_relative 'rolodex'
 
 DataMapper.setup(:default, "sqlite3:database.sqlite3") # Initialize connection to databse
+
+class Contact
+
+	include DataMapper::Resource
+
+	property :id, Serial
+	property :fname, String
+	property :lname, String
+	property :email, String
+	property :notes, String
+
+end # class Contact
+
+DataMapper.finalize
+DataMapper.auto_upgrade!
 
 $rolodex = Rolodex.new # Set a global variable to allow acces from each action in Sinatra
 
