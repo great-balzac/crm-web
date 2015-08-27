@@ -1,6 +1,5 @@
 require 'sinatra'
 require 'data_mapper' # Initialize connection to database
-# require_relative 'contact' # No longer needed because it exists inside crm.rb
 require_relative 'rolodex'
 
 DataMapper.setup(:default, "sqlite3:database.sqlite3") # Initialize connection to databse
@@ -33,6 +32,7 @@ end
 
 # Refers to contacts.erb
 get '/contacts' do
+	@contacts = Contact.all
 	erb :contacts
 end
 
@@ -42,7 +42,7 @@ get '/contacts/new' do
 end
 
 get "/contacts/:id" do
-	@contact = $rolodex.find_contact(params[:id].to_i)
+	@contact = Contact.get(params[:id].to_i)
 	if @contact
 		erb :show_contact
 	else
@@ -51,7 +51,7 @@ get "/contacts/:id" do
 end
 
 get "/contacts/:id/edit" do
-	@contact = $rolodex.find_contact(params[:id].to_i)
+	@contact = Contact.get(params[:id].to_i)
 	if @contact
 		erb :edit_contact
 	else
@@ -60,12 +60,13 @@ get "/contacts/:id/edit" do
 end # get "/contacts/:id/edit"
 
 put "/contacts/:id" do
-	@contact = $rolodex.find_contact(params[:id].to_i)
+	@contact = Contact.get(params[:id].to_i)
 	if @contact
-		@contact.fname = params[:fname]
-		@contact.lname = params[:lname]
-		@contact.email = params[:email]
-		@contact.notes = params[:notes]
+		@contact.update(:fname => params[:fname],
+			:lname => params[:lname],
+			:email => params[:email],
+			:notes => params[:notes]
+			)
 
 		redirect to("/contacts")
 	else
@@ -74,20 +75,22 @@ put "/contacts/:id" do
 end # put "/contacts/:id"
 
 delete "/contacts/:id" do
-	@contact = $rolodex.find_contact(params[:id].to_i)
+	@contact = Contact.get(params[:id].to_i)
 	if @contact
-		$rolodex.remove_contact(@contact)
+		@contact.destroy
 		redirect to("/contacts")  # After deletion, returns to contacts main page
 	else
 		raise Sinatra::NotFound
 	end
 end # delete "/contacts/:id"
 
-# Server responds to the POST method and creates a resource
-# with the data submitted from new_contact.erb
 post '/contacts' do
-	# puts params
-	new_contact = Contact.new(params[:fname], params[:lname], params[:email], params[:notes])
-	$rolodex.add_contact(new_contact)
+	new_contact = Contact.create(
+		:fname => params[:fname],
+		:lname => params[:lname],
+		:email => params[:email],
+		:notes => params[:notes]
+		)
+
 	redirect to('/contacts')	# Redirects to display contacts page
 end
