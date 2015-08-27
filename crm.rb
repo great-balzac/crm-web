@@ -4,10 +4,6 @@ require_relative 'rolodex'
 
 $rolodex = Rolodex.new # Set a global variable to allow acces from each action in Sinatra
 
-# temp fake data
-$rolodex.add_contact(Contact.new("Johnny", "Bravo", "johnny@bitmakerlabs.com", "Rockstar"))
-$rolodex.add_contact(Contact.new("Cornholio", "Great", "bungmuch@bitmakerlabs.com", "From Lake Titticaca"))
-$rolodex.add_contact(Contact.new("Rodney", "Johnson", "DG@bitmakerlabs.com", "Shower cap tester"))
 
 # ===== ROUTES =====
 
@@ -37,7 +33,7 @@ get "/contacts/:id" do
 end
 
 get "/contacts/:id/edit" do
-	@contact = $rolodex.find(params[:id].to_i)
+	@contact = $rolodex.find_contact(params[:id].to_i)
 	if @contact
 		erb :edit_contact
 	else

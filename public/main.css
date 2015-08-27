@@ -179,7 +179,6 @@ strong {
 	text-decoration: underline;
 }
 
-
 .contact-box {
 	margin: 5px;
 	box-shadow: 6px 6px 4px #ECECEC;
@@ -190,7 +189,6 @@ strong {
 .contact-box th {
 	text-align: left;
 	padding-right: 2em;
-
 }
 
 /*
@@ -344,10 +342,6 @@ Styles
 
 .listshadow {
 	box-shadow: 1px 1px 2px #ECECEC;
-}
-
-.contact-display li {
-	font-size: 18px;
 }
 
 .new-contact-table {
