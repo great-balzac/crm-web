@@ -13,7 +13,7 @@ class Contact
 	property :lname, String
 	property :email, String
 	property :notes, Text
-
+	
 end # class Contact
 
 DataMapper.finalize
