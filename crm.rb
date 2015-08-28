@@ -12,7 +12,7 @@ class Contact
 	property :fname, String
 	property :lname, String
 	property :email, String
-	property :notes, String
+	property :notes, Text
 
 end # class Contact
 
